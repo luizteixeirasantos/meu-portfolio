@@ -64,7 +64,7 @@ function App() {
     <div className="portfolio-container dark-theme">
       {/* 0. MENU E CABEÇALHO */}
       <nav className="main-nav">
-        <h1 className="logo">LUIZ HENRIQUE</h1>
+        <h1 className="logo">LUIZ HENRIQUE SANTOS</h1>
 
         {/* BOTÃO DO MENU HAMBÚRGUER (Só aparece no telemóvel) */}
         <button className="mobile-menu-btn" onClick={toggleMenu}>
