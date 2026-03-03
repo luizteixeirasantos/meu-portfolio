@@ -1,30 +1,33 @@
-# 👨‍💻 Portfólio | Luiz Henrique - Desenvolvedor Full Stack
+# 👨‍💻 Portfolio | Luiz Henrique - Full Stack Developer
 
-Bem-vindo ao repositório do meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minha trajetória, habilidades técnicas e os principais projetos que venho construindo. 
+Este repositório contém o código-fonte do meu portfólio profissional, desenvolvido com foco em performance, animações fluidas e um design moderno "Dark & Neon".
 
-🔗 **[Acesse o Portfólio Online Aqui](https://luizhenrique-portfolio.vercel.app/)**
+🔗 **[Acesse o Portfólio Online aqui](https://luizhenrique-portfolio.vercel.app/)**
 
-## 🚀 Tecnologias Utilizadas
+## 🚀 Sobre o Projeto
 
-Este portfólio foi construído do zero, priorizando performance, responsividade e uma interface moderna e dinâmica (Dark/Neon Theme).
+O portfólio foi construído para centralizar meus projetos e demonstrar minhas competências técnicas no ciclo completo de desenvolvimento de software. A interface é totalmente responsiva e conta com um menu lateral dinâmico para dispositivos móveis.
 
-* **React (Vite):** Para a construção da interface componentizada e carregamento ultrarrápido.
-* **Framer Motion:** Responsável pelas animações fluidas e efeitos de scroll (cascata).
-* **CSS3:** Estilização global com variáveis customizadas, Flexbox e CSS Grid para responsividade total.
-* **React Icons:** Biblioteca de ícones vetoriais.
+## 🛠️ Tecnologias Utilizadas
+
+- **React 19 (Vite):** Framework principal para uma interface reativa e build otimizado.
+- **Framer Motion:** Biblioteca para animações de entrada e efeitos de scroll em cascata.
+- **React Icons:** Conjunto de ícones profissionais para navegação e redes sociais.
+- **CSS3:** Estilização customizada com variáveis globais e suporte a temas.
 
 ## 💻 Projetos em Destaque
 
-Neste portfólio, apresento soluções completas que desenvolvi:
+Neste portfólio, apresento soluções técnicas que envolvem IA, bancos de dados e automação:
 
-1. **🌱 App de Agricultura:** Plataforma focada no agronegócio que integra previsão do tempo em tempo real e análise de imagens via IA para diagnóstico de doenças em plantas. Construído com React, Node.js e Python.
-2. **⚙️ Sistema de OS:** Um sistema robusto para o gerenciamento de ordens de serviço. Focado na estruturação de dados, conta com um banco de dados relacional e scripts SQL unificados.
-3. **📊 Dashboard WaveSolder:** Interface de monitoramento criada com JavaScript, integrada a scripts `.bat` de automação para garantir a inicialização ágil e eficiente do ambiente de desenvolvimento local.
+1. **🌱 App de Agricultura:** Plataforma com previsão do tempo e análise de imagens via IA para diagnóstico de doenças em plantas. Desenvolvido com React, Node.js e Python.
+2. **⚙️ Sistema de OS:** Gerenciamento de ordens de serviço com banco de dados relacional e scripts SQL.
+3. **📊 Dashboard WaveSolder:** Interface de monitoramento com automação via scripts `.bat` para ambientes de desenvolvimento.
 
-## 🛠️ Como rodar este projeto localmente
+## 🔧 Instalação e Execução Local
 
-Se você deseja clonar este repositório e rodá-lo na sua máquina, siga os passos abaixo:
+Para rodar este projeto em sua máquina:
 
 1. Clone o repositório:
    ```bash
    git clone [https://github.com/luizteixeirasantos/meu-portfolio.git](https://github.com/luizteixeirasantos/meu-portfolio.git)
+   ```
