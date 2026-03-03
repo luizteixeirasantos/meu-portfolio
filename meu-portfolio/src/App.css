@@ -1,0 +1,454 @@
+/* =========================================
+   1. Variáveis, Reset e Fundo Total
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --bg-dark-start: #0a0f1e;
+  --bg-dark-end: #02040a;
+  --text-white: #ffffff;
+  --text-light-green: #00ff00;
+  --purple-glow: #a855f7;
+  --cyan-glow: #00ffff;
+  --yellow-glow: #fbbf24;
+  --footer-dark: #050810;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Garante que o padding não aumente o tamanho dos elementos */
+  font-family: 'Inter', sans-serif;
+  color: var(--text-white);
+}
+
+/* Adicionamos a tag html aqui junto com o body */
+html,
+body {
+  background: linear-gradient(180deg, var(--bg-dark-start) 0%, var(--bg-dark-end) 100%);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  justify-content: center;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+
+/* Utilitários */
+.text-light-green {
+  color: var(--text-light-green);
+}
+
+.text-purple {
+  color: var(--purple-glow);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.no-underline {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* =========================================
+   2. Navegação Principal (Full Width)
+   ========================================= */
+.main-nav {
+  background-color: rgba(10, 15, 30, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 1rem 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Garante que o menu cole na esquerda */
+  width: 100%;
+  /* Mudamos de 100vw para 100% */
+  z-index: 1000;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--cyan-glow);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2vw;
+  /* Espaçamento dinâmico */
+  font-weight: 600;
+}
+
+.nav-links a,
+.social-top a,
+.footer-links a {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover,
+.social-top a:hover,
+.footer-links a:hover {
+  color: var(--purple-glow);
+  text-shadow: 0 0 10px var(--purple-glow);
+}
+
+.social-top a,
+.footer-links a {
+  font-size: 1.5rem;
+}
+
+.social-top {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   3. Hero Section (Apresentação Espalhada)
+   ========================================= */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 5vw 4rem 5vw;
+  /* Mais padding no topo por causa do menu fixo */
+}
+
+.hero-profile {
+  display: flex;
+  gap: 5vw;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* Ocupa a largura total do padding lateral */
+}
+
+.profile-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid transparent;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+.hero-content {
+  /* Contraste controlado: O conteúdo cresce, mas o texto não espalha demais para leitura */
+  max-width: 900px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* Botão Get in Touch (Neon Ciano) */
+.get-in-touch-btn {
+  background-color: transparent;
+  border: 2px solid var(--cyan-glow);
+  padding: 14px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.get-in-touch-btn:hover {
+  background-color: var(--cyan-glow);
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   4. Seção: Habilidades (Pílulas Neon Espalhadas)
+   ========================================= */
+.skills-section {
+  padding: 6rem 5vw;
+  background-color: rgba(10, 15, 30, 0.3);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  /* REMOVIDO: max-width. Agora ocupa toda a largura disponível. */
+  width: 100%;
+}
+
+.skill-pill {
+  border: 2px solid var(--skill-color);
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+.skill-pill:hover {
+  transform: translateY(-5px) scale(1.05);
+  background-color: var(--skill-color);
+  color: #000;
+  box-shadow: 0 0 20px var(--skill-color);
+}
+
+/* =========================================
+   5. Seção: Projetos (Grid Full Width)
+   ========================================= */
+.projects-section {
+  padding: 6rem 5vw;
+}
+
+.projects-grid {
+  display: grid;
+  /* Grid responsivo: ocupa toda a largura e quebra cards de no mínimo 350px */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  /* REMOVIDO: max-width. */
+  width: 100%;
+}
+
+.project-card {
+  background-color: #0f172a;
+  /* Um tom acima do fundo */
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  transition: all 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 15px rgba(168, 85, 247, 0.1);
+}
+
+.project-header {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--yellow-glow);
+}
+
+.project-card p {
+  opacity: 0.8;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tech-badge {
+  background-color: transparent;
+  border: 1px solid var(--purple-glow);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--purple-glow);
+  text-transform: uppercase;
+}
+
+.projects-more {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+/* Botão Ver Mais Projetos (Neon Roxo) */
+.more-projects-btn {
+  background-color: transparent;
+  border: 2px solid var(--purple-glow);
+  padding: 14px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.more-projects-btn:hover {
+  background-color: var(--purple-glow);
+  color: #fff;
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+}
+
+/* =========================================
+   6. Rodapé (Full Width Dark)
+   ========================================= */
+.main-footer {
+  background-color: var(--footer-dark);
+  padding: 4rem 5vw 2rem 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(168, 85, 247, 0.1);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-bottom p {
+  opacity: 0.5;
+  font-size: 0.85rem;
+}
+
+/* Esconder o botão do menu em ecrãs grandes (Computador) */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--cyan-glow);
+  cursor: pointer;
+  z-index: 2000;
+  padding: 1px;
+}
+
+/* =========================================
+   7. Responsividade Total e Menu Mobile
+   ========================================= */
+@media (max-width: 1200px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .profile-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* Esconder a barra social do topo para poupar espaço no mobile */
+  .social-top {
+    display: none;
+  }
+
+  /* Mostrar o botão do menu hambúrguer */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Transformar os nav-links num menu lateral (Slide-in) */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* Começa escondido fora do ecrã à direita */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 15, 30, 0.95);
+    /* Fundo escuro quase opaco */
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    /* Links um debaixo do outro */
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: right 0.4s ease-in-out;
+    /* Animação de deslizar suave */
+    z-index: 1500;
+  }
+
+  /* Quando o estado isMenuOpen muda para true, esta classe é ativada no JSX */
+  .nav-links.active {
+    right: 0;
+    /* O menu desliza para dentro do ecrã */
+  }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    /* Links maiores para clicar facilmente com o dedo */
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
