@@ -1,7 +1,7 @@
 /* =========================================
    1. Variáveis, Reset e Fundo Total
    ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
 
 :root {
   --bg-dark-start: #0a0f1e;
@@ -19,14 +19,18 @@
   padding: 0;
   box-sizing: border-box;
   /* Garante que o padding não aumente o tamanho dos elementos */
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--text-white);
 }
 
 /* Adicionamos a tag html aqui junto com o body */
 html,
 body {
-  background: linear-gradient(180deg, var(--bg-dark-start) 0%, var(--bg-dark-end) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--bg-dark-start) 0%,
+    var(--bg-dark-end) 100%
+  );
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
@@ -145,7 +149,9 @@ html {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid transparent;
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(0, 255, 255, 0.3);
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, 0.4),
+    0 0 40px rgba(0, 255, 255, 0.3);
 }
 
 .hero-content {
@@ -227,14 +233,44 @@ html {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+
+  /* AJUSTE AQUI: O brilho agora segue a cor da pílula */
+  box-shadow: 0 0 10px var(--skill-color);
+  opacity: 0.9;
 }
 
 .skill-pill:hover {
   transform: translateY(-5px) scale(1.05);
   background-color: var(--skill-color);
-  color: #000;
-  box-shadow: 0 0 20px var(--skill-color);
+  color: #000; /* Texto fica preto para dar contraste no fundo neon */
+  box-shadow: 0 0 25px var(--skill-color);
+  opacity: 1;
+}
+
+.skills-category {
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.skills-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  /* Brilho sutil no subtítulo */
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Garante que o grid de pílulas use todo o espaço com o respiro de 5vw */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0 5vw;
+  width: 100%;
 }
 
 /* =========================================
@@ -265,7 +301,9 @@ html {
 .project-card:hover {
   transform: translateY(-10px);
   border-color: rgba(168, 85, 247, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 15px rgba(168, 85, 247, 0.1);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(168, 85, 247, 0.1);
 }
 
 .project-header {

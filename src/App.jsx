@@ -15,15 +15,23 @@ import { GiFarmTractor } from "react-icons/gi";
 import "./App.css";
 import minhaFoto from "./minha-foto.png";
 
-const minhasHabilidades = [
+const hardSkills = [
   { nome: "JavaScript", cor: "#00ffff" },
   { nome: "React", cor: "#00ffff" },
   { nome: "Node.js", cor: "#00ff00" },
-  { nome: "Express.js", cor: "#a855f7" },
+  { nome: "Express.js", cor: "#00ff00" },
   { nome: "HTML/CSS", cor: "#a855f7" },
   { nome: "MySQL", cor: "#f97316" },
   { nome: "Python", cor: "#fbbf24" },
   { nome: "Git/GitHub", cor: "#fbbf24" },
+];
+
+const softSkills = [
+  { nome: "Trabalho em Equipe", cor: "#ec4899" },
+  { nome: "Relatórios Técnicos", cor: "#ec4899" },
+  { nome: "Resolução de Problemas", cor: "#8b5cf6" },
+  { nome: "Comunicação Eficaz", cor: "#8b5cf6" },
+  { nome: "Proatividade", cor: "#f43f5e" },
 ];
 
 const meusProjetos = [
@@ -167,24 +175,46 @@ function App() {
 
       {/* 2. SEÇÃO: HABILIDADES */}
       <section className="skills-section" id="skills">
-        <h2 className="section-title text-center">HABILIDADES TÉCNICAS</h2>
-        <div className="skills-grid">
-          {minhasHabilidades.map((hab, index) => (
-            <motion.div
-              className="skill-pill"
-              key={index}
-              style={{
-                "--skill-color": hab.cor,
-                "--skill-color-rgb": "0, 255, 255",
-              }}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              {hab.nome}
-            </motion.div>
-          ))}
+        <h2 className="section-title text-center">MINHAS COMPETÊNCIAS</h2>
+
+        {/* Subseção: Hard Skills */}
+        <div className="skills-category">
+          <h3 className="skills-subtitle text-light-green">HARD SKILLS</h3>
+          <div className="skills-grid">
+            {hardSkills.map((hab, index) => (
+              <motion.div
+                className="skill-pill"
+                key={index}
+                style={{ "--skill-color": hab.cor }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                {hab.nome}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Subseção: Soft Skills */}
+        <div className="skills-category">
+          <h3 className="skills-subtitle text-purple">SOFT SKILLS</h3>
+          <div className="skills-grid">
+            {softSkills.map((hab, index) => (
+              <motion.div
+                className="skill-pill"
+                key={index}
+                style={{ "--skill-color": hab.cor }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                {hab.nome}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
