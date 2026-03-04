@@ -235,34 +235,6 @@ function App() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="main-footer" id="contact">
-        <div className="footer-links">
-          <a
-            href="https://linkedin.com/in/luizteixeirasantos"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaLinkedinIn />
-          </a>
-          <a
-            href="https://github.com/luizteixeirasantos"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="mailto:contatoluizhteixeira@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaEnvelope />
-          </a>
-        </div>
-        <p className="footer-bottom">Copyright © 2026 Luiz Henrique.</p>
-      </footer>
-
       {/* MODAL DE DETALHES DO PROJETO */}
       <AnimatePresence>
         {selectedProject && (
@@ -319,6 +291,34 @@ function App() {
           </div>
         )}
       </AnimatePresence>
+
+      {/* FOOTER */}
+      <footer className="main-footer" id="contact">
+        <div className="footer-links">
+          <a
+            href="https://linkedin.com/in/luizteixeirasantos"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedinIn />
+          </a>
+          <a
+            href="https://github.com/luizteixeirasantos"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="mailto:contatoluizhteixeira@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaEnvelope />
+          </a>
+        </div>
+        <p className="footer-bottom">Copyright © 2026 Luiz Henrique.</p>
+      </footer>
     </div>
   );
 }
