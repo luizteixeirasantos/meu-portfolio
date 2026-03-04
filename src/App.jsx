@@ -39,18 +39,6 @@ const softSkills = [
 
 // 3. CONFIGURAÇÃO DOS PROJETOS (COM DETALHES PARA O MODAL)
 const meusProjetos = [
-  // Exemplo de card de projeto
-  // {
-  //   id: 1,
-  //   icone: <GiFarmTractor style={{ fontSize: "1.5rem", fill: "#00ff00" }} />,
-  //   titulo: "App de Agricultura",
-  //   descricao: "Plataforma com previsão do tempo e análise de imagens via IA.",
-  //   detalhes:
-  //     "Este projeto utiliza modelos de Inteligência Artificial em Python para realizar diagnósticos de doenças em plantas através de fotos. No frontend, o React garante uma interface ágil e responsiva para o produtor rural.",
-  //   tecnologias: ["React", "Node.js", "Python"],
-  //   github: "https://github.com/luizteixeirasantos/meu-portfolio",
-  //   live: "https://meu-portfolio-six-self.vercel.app/",
-  // },
   {
     id: 1,
     icone: <GiFarmTractor style={{ fontSize: "1.5rem", fill: "#00ff00" }} />,
@@ -70,7 +58,7 @@ const meusProjetos = [
     detalhes:
       "Um sistema completo para controle de manutenção e serviços, utilizando MySQL para persistência de dados e Node.js no backend para regras de negócio complexas.",
     tecnologias: ["MySQL", "Node.js", "Backend"],
-    github: "https://github.com/luizteixeirasantos/meu-portfolio",
+    github: "https://github.com/luizteixeirasantos/sistema_os.git",
     live: null,
   },
   {
@@ -81,7 +69,7 @@ const meusProjetos = [
     detalhes:
       "Interface desenvolvida para monitorar processos industriais, contando com automação via scripts .bat para inicialização rápida do ambiente.",
     tecnologias: ["JavaScript", "Automação", "CSS"],
-    github: "https://github.com/luizteixeirasantos/meu-portfolio",
+    github: "https://github.com/luizteixeirasantos/DashboardWave.git",
     live: null,
   },
 ];
