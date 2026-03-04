@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
   FaBars,
@@ -10,11 +10,13 @@ import {
   FaLinkedinIn,
   FaTimes,
   FaWhatsapp,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { GiFarmTractor } from "react-icons/gi";
 import "./App.css";
 import minhaFoto from "./minha-foto.png";
 
+// 1. CONFIGURAÇÃO DE HARD SKILLS
 const hardSkills = [
   { nome: "JavaScript", cor: "#00ffff" },
   { nome: "React", cor: "#00ffff" },
@@ -26,6 +28,7 @@ const hardSkills = [
   { nome: "Git/GitHub", cor: "#fbbf24" },
 ];
 
+// 2. CONFIGURAÇÃO DE SOFT SKILLS
 const softSkills = [
   { nome: "Trabalho em Equipe", cor: "#ec4899" },
   { nome: "Relatórios Técnicos", cor: "#ec4899" },
@@ -34,52 +37,69 @@ const softSkills = [
   { nome: "Proatividade", cor: "#f43f5e" },
 ];
 
+// 3. CONFIGURAÇÃO DOS PROJETOS (COM DETALHES PARA O MODAL)
 const meusProjetos = [
+  // Exemplo de card de projeto
+  // {
+  //   id: 1,
+  //   icone: <GiFarmTractor style={{ fontSize: "1.5rem", fill: "#00ff00" }} />,
+  //   titulo: "App de Agricultura",
+  //   descricao: "Plataforma com previsão do tempo e análise de imagens via IA.",
+  //   detalhes:
+  //     "Este projeto utiliza modelos de Inteligência Artificial em Python para realizar diagnósticos de doenças em plantas através de fotos. No frontend, o React garante uma interface ágil e responsiva para o produtor rural.",
+  //   tecnologias: ["React", "Node.js", "Python"],
+  //   github: "https://github.com/luizteixeirasantos/meu-portfolio",
+  //   live: "https://meu-portfolio-six-self.vercel.app/",
+  // },
   {
     id: 1,
-    icone: <GiFarmTractor style={{ fontSize: "1.5rem", color: "#00ff00" }} />,
+    icone: <GiFarmTractor style={{ fontSize: "1.5rem", fill: "#00ff00" }} />,
     titulo: "App de Agricultura",
-    descricao:
-      "Plataforma com previsão do tempo em tempo real e análise de imagens via IA para diagnóstico de doenças em plantas.",
+    descricao: "Plataforma com previsão do tempo e análise de imagens via IA.",
+    detalhes:
+      "Este projeto utiliza modelos de Inteligência Artificial em Python para realizar diagnósticos de doenças em plantas através de fotos. No frontend, o React garante uma interface ágil e responsiva para o produtor rural.",
     tecnologias: ["React", "Node.js", "Python"],
+    github: "https://github.com/luizteixeirasantos/meu-portfolio",
+    live: "https://meu-portfolio-six-self.vercel.app/",
   },
   {
     id: 2,
-    icone: <FaDatabase style={{ fontSize: "1.5rem", color: "#f97316" }} />,
+    icone: <FaDatabase style={{ fontSize: "1.5rem", fill: "#f97316" }} />,
     titulo: "Sistema de OS",
-    descricao:
-      "Sistema completo para gerenciamento de ordens de serviço com banco de dados relacional e script SQL unificado.",
-    tecnologias: ["SQL", "Backend"],
+    descricao: "Gerenciamento de ordens de serviço com banco de dados SQL.",
+    detalhes:
+      "Um sistema completo para controle de manutenção e serviços, utilizando MySQL para persistência de dados e Node.js no backend para regras de negócio complexas.",
+    tecnologias: ["MySQL", "Node.js", "Backend"],
+    github: "https://github.com/luizteixeirasantos/meu-portfolio",
+    live: null,
   },
   {
     id: 3,
-    icone: <FaCog style={{ fontSize: "1.5rem", color: "#a855f7" }} />,
+    icone: <FaCog style={{ fontSize: "1.5rem", fill: "#a855f7" }} />,
     titulo: "Dashboard WaveSolder",
-    descricao:
-      "Interface de monitoramento com scripts ..bat de automação para inicialização ágil do ambiente de desenvolvimento.",
-    tecnologias: ["JavaScript", "Automação"],
+    descricao: "Interface de monitoramento com automação via scripts.",
+    detalhes:
+      "Interface desenvolvida para monitorar processos industriais, contando com automação via scripts .bat para inicialização rápida do ambiente.",
+    tecnologias: ["JavaScript", "Automação", "CSS"],
+    github: "https://github.com/luizteixeirasantos/meu-portfolio",
+    live: null,
   },
 ];
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <div className="portfolio-container dark-theme">
-      {/* 0. MENU E CABEÇALHO */}
+      {/* NAVEGAÇÃO */}
       <nav className="main-nav">
-        <h1 className="logo">LUIZ HENRIQUE SANTOS</h1>
-
-        {/* BOTÃO DO MENU HAMBÚRGUER (Só aparece no telemóvel) */}
+        <h1 className="logo">LUIZ HENRIQUE</h1>
         <button className="mobile-menu-btn" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
-
-        {/* 6. A classe 'active' é adicionada se isMenuOpen for true */}
         <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <a href="#home" onClick={toggleMenu}>
             HOME
@@ -94,7 +114,6 @@ function App() {
             CONTACT
           </a>
         </div>
-
         <div className="social-top">
           <a
             href="https://www.linkedin.com/in/luizteixeirasantos"
@@ -110,7 +129,6 @@ function App() {
           >
             <FaInstagram />
           </a>
-          {/* LINK DO WHATSAPP ADICIONADO AQUI */}
           <a
             href="https://wa.me/5537996697120"
             target="_blank"
@@ -121,7 +139,7 @@ function App() {
         </div>
       </nav>
 
-      {/* 1. HERO SECTION */}
+      {/* HERO SECTION */}
       <header className="hero-section" id="home">
         <motion.div
           className="hero-profile"
@@ -129,11 +147,7 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <img
-            src={minhaFoto}
-            alt="Foto de Perfil de Luiz Henrique"
-            className="profile-img"
-          />
+          <img src={minhaFoto} alt="Luiz Henrique" className="profile-img" />
           <div className="hero-content">
             <h1 className="hero-title">Olá, eu sou o Luiz Henrique</h1>
             <h2 className="subtitle">
@@ -142,29 +156,11 @@ function App() {
             </h2>
             <p className="hero-text">
               Profissional de tecnologia com formação técnica e vocação para o
-              desenvolvimento web. Meu conjunto de habilidades abrange todo o
-              ciclo de desenvolvimento, desde a estruturação de interfaces com
-              HTML, CSS3 e REACT até a lógica de servidor e persistência de
-              dados utilizando Node.js e MySQL.
+              desenvolvimento web. Especialista em criar interfaces com React e
+              arquiteturas de servidor com Node.js.
             </p>
-            <p className="hero-text">
-              Destaco-me pela facilidade de comunicação e aptidão para o
-              trabalho em equipe, características que considero essenciais para
-              o sucesso de projetos colaborativos. Sou movido pela resolução de
-              desafios lógicos e pela busca contínua por excelência técnica.
-            </p>
-            <p className="hero-text">
-              Atualmente, estou disponível para integrar times de
-              desenvolvimento que valorizem proatividade e comprometimento,
-              visando contribuir ativamente para o sucesso dos projetos da
-              empresa.
-            </p>
-
-            {/* BOTÃO DE E-MAIL ADICIONADO AQUI (Mudamos de <button> para <a> com mailto) */}
             <a
-              href="mailto:contatoluizhteixeira@gmail.com?subject=Contato pelo Site"
-              target="_blank"
-              rel="noreferrer"
+              href="mailto:contatoluizhteixeira@gmail.com"
               className="btn-primary no-underline get-in-touch-btn"
             >
               Entre em Contato
@@ -173,11 +169,10 @@ function App() {
         </motion.div>
       </header>
 
-      {/* 2. SEÇÃO: HABILIDADES */}
+      {/* SEÇÃO DE SKILLS (CATEGORIZADA) */}
       <section className="skills-section" id="skills">
         <h2 className="section-title text-center">MINHAS COMPETÊNCIAS</h2>
 
-        {/* Subseção: Hard Skills */}
         <div className="skills-category">
           <h3 className="skills-subtitle text-light-green">HARD SKILLS</h3>
           <div className="skills-grid">
@@ -189,7 +184,7 @@ function App() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ delay: index * 0.1 }}
               >
                 {hab.nome}
               </motion.div>
@@ -197,7 +192,6 @@ function App() {
           </div>
         </div>
 
-        {/* Subseção: Soft Skills */}
         <div className="skills-category">
           <h3 className="skills-subtitle text-purple">SOFT SKILLS</h3>
           <div className="skills-grid">
@@ -209,7 +203,7 @@ function App() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ delay: index * 0.1 }}
               >
                 {hab.nome}
               </motion.div>
@@ -218,7 +212,7 @@ function App() {
         </div>
       </section>
 
-      {/* 3. SEÇÃO: PROJETOS */}
+      {/* SEÇÃO DE PROJETOS */}
       <section className="projects-section" id="projects">
         <h2 className="section-title text-center">MEUS PROJETOS</h2>
         <div className="projects-grid">
@@ -226,40 +220,34 @@ function App() {
             <motion.div
               className="project-card"
               key={projeto.id}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              onClick={() => setSelectedProject(projeto)}
             >
               <div className="project-header">
                 {projeto.icone}
                 <h3>{projeto.titulo}</h3>
               </div>
               <p>{projeto.descricao}</p>
-              <div className="tech-stack">
-                {projeto.tecnologias.map((tech, i) => (
-                  <span className="tech-badge" key={i}>
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <button
+                className="btn-secondary"
+                style={{
+                  marginTop: "1rem",
+                  fontSize: "0.8rem",
+                  color: "#000",
+                  fontWeight: "bold",
+                }}
+              >
+                Saiba Mais
+              </button>
             </motion.div>
           ))}
         </div>
-        <motion.div
-          className="projects-more"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <button className="btn-secondary no-underline more-projects-btn">
-            Ver Mais Projetos
-          </button>
-        </motion.div>
       </section>
 
-      {/* 4. RODAPÉ */}
+      {/* FOOTER */}
       <footer className="main-footer" id="contact">
         <div className="footer-links">
           <a
@@ -277,17 +265,72 @@ function App() {
             <FaGithub />
           </a>
           <a
-            href="mailto:contatoluizhteixeira@gmail.com?subject=Contato pelo Site"
+            href="mailto:contatoluizhteixeira@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
             <FaEnvelope />
           </a>
         </div>
-        <div className="footer-bottom text-center">
-          <p>Copyright © 2026 Luiz Henrique.</p>
-        </div>
+        <p className="footer-bottom">Copyright © 2026 Luiz Henrique.</p>
       </footer>
+
+      {/* MODAL DE DETALHES DO PROJETO */}
+      <AnimatePresence>
+        {selectedProject && (
+          <div
+            className="modal-overlay"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              className="modal-content"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="close-modal"
+                onClick={() => setSelectedProject(null)}
+              >
+                <FaTimes />
+              </button>
+              <div className="modal-header">
+                {selectedProject.icone}
+                <h2>{selectedProject.titulo}</h2>
+              </div>
+              <p className="modal-description">{selectedProject.detalhes}</p>
+              <div className="tech-stack" style={{ margin: "1.5rem 0" }}>
+                {selectedProject.tecnologias.map((tech, i) => (
+                  <span key={i} className="tech-badge">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="modal-footer">
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary"
+                >
+                  <FaGithub /> GitHub
+                </a>
+                {selectedProject.live && (
+                  <a
+                    href={selectedProject.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-secondary"
+                  >
+                    <FaExternalLinkAlt /> Ver Online
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
