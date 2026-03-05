@@ -326,6 +326,16 @@ html {
   margin-bottom: 2rem;
 }
 
+.project-card button {
+  color: #f1f1f4 !important;
+  font-weight: bold !important;
+  border: 2px solid #f1f1f4;
+  background-color: #42228f;
+}
+
+.modal-description {
+  white-space: pre-line;
+}
 .tech-stack {
   display: flex;
   gap: 0.6rem;

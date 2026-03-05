@@ -1,16 +1,17 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import {
   FaBars,
   FaCog,
   FaDatabase,
   FaEnvelope,
+  FaExternalLinkAlt,
   FaGithub,
+  FaHeartbeat,
   FaInstagram,
   FaLinkedinIn,
   FaTimes,
   FaWhatsapp,
-  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { GiFarmTractor } from "react-icons/gi";
 import "./App.css";
@@ -41,36 +42,64 @@ const softSkills = [
 const meusProjetos = [
   {
     id: 1,
-    icone: <GiFarmTractor style={{ fontSize: "1.5rem", fill: "#00ff00" }} />,
-    titulo: "App de Agricultura",
-    descricao: "Plataforma com previsão do tempo e análise de imagens via IA.",
-    detalhes:
-      "Este projeto utiliza modelos de Inteligência Artificial em Python para realizar diagnósticos de doenças em plantas através de fotos. No frontend, o React garante uma interface ágil e responsiva para o produtor rural.",
+    icone: <GiFarmTractor style={{ fontSize: "2rem", fill: "#00ff00" }} />,
+    titulo: "Fieldlytics",
+    descricao:
+      "Utilizamos Inteligência Artificial avançada para análise de imagens agrícolas e integração de dados climáticos em tempo real, permitindo diagnósticos precisos e recomendações personalizadas para cada tipo de plantação, além de controle financeiro da fazenda.",
+    detalhes: `Fieldlytics é uma plataforma SaaS (Software as a Service) voltada para o agronegócio, que utiliza Inteligência Artificial e dados climáticos em tempo real para auxiliar produtores rurais na tomada de decisões mais inteligentes, sustentáveis e produtivas.
+
+      O objetivo do projeto é revolucionar a agricultura por meio da tecnologia, tornando soluções avançadas acessíveis tanto para pequenos produtores quanto para grandes fazendas.`,
     tecnologias: ["React", "Node.js", "Python"],
     github: "https://github.com/luizteixeirasantos/meu-portfolio",
-    live: "https://meu-portfolio-six-self.vercel.app/",
+    live: null,
   },
   {
     id: 2,
-    icone: <FaDatabase style={{ fontSize: "1.5rem", fill: "#f97316" }} />,
+    icone: <FaDatabase style={{ fontSize: "2rem", fill: "#f97316" }} />,
     titulo: "Sistema de OS",
-    descricao: "Gerenciamento de ordens de serviço com banco de dados SQL.",
-    detalhes:
-      "Um sistema completo para controle de manutenção e serviços, utilizando MySQL para persistência de dados e Node.js no backend para regras de negócio complexas.",
+    descricao:
+      "Sistema web do tipo MES (Manufacturing Execution System) simplificado, focado no controle de chão de fábrica.",
+    detalhes: `Este projeto é um sistema web do tipo MES (Manufacturing Execution System) simplificado, focado no controle de chão de fábrica. Ele integra três setores principais em tempo real:
+
+    Produção (Operador): Registra início/fim de lotes, apontamento de produção hora-a-hora, paradas de máquina e solicita materiais.
+
+    Almoxarifado: Recebe pedidos de materiais em tempo real (via WebSocket) e gerencia o atendimento.
+
+    Administração: Gerencia usuários, permissões, catálogos e visualiza relatórios históricos de chamados e produção.`,
     tecnologias: ["MySQL", "Node.js", "Backend"],
     github: "https://github.com/luizteixeirasantos/sistema_os.git",
     live: null,
   },
   {
     id: 3,
-    icone: <FaCog style={{ fontSize: "1.5rem", fill: "#a855f7" }} />,
+    icone: <FaCog style={{ fontSize: "2rem", fill: "#a855f7" }} />,
     titulo: "Dashboard WaveSolder",
-    descricao: "Interface de monitoramento com automação via scripts.",
-    detalhes:
-      "Interface desenvolvida para monitorar processos industriais, contando com automação via scripts .bat para inicialização rápida do ambiente.",
+    descricao: "Sistema automático de calculo de fluxo, visando performance, qualidade e economia.",
+    detalhes: `Sistema criado para automatizar o cálculo do fluxo ideal para placas de circuito impresso (PCI) em linhas de produção. 
+
+    O sistema considera variáveis operacionais como:
+
+    - Tamanho da PCI
+    - Velocidade do transportador (conveyor)
+    - Especificações técnicas do fluxo
+
+`,
     tecnologias: ["JavaScript", "Automação", "CSS"],
     github: "https://github.com/luizteixeirasantos/DashboardWave.git",
     live: null,
+  },
+  {
+    id: 4,
+    icone: <FaHeartbeat style={{ fontSize: "2rem", fill: "#f80000" }} />,
+    titulo: "Landing Page Nutricionista",
+    descricao:
+      "Page profissional da Dra. Eduarda Goulart, nutricionista, focada em uma metodologia de Nutrição Sem Neura e planos alimentares personalizados..",
+    detalhes:
+      "O objetivo principal desta página é apresentar a metodologia da Dra. Eduarda Goulart, seus serviços de consulta e acompanhamento, e capturar agendamentos, principalmente via WhatsApp, transformando visitantes em clientes.",
+    tecnologias: ["JavaScript", "HTML", "CSS"],
+    github:
+      "https://github.com/luizteixeirasantos/landingPageNutricionista.git",
+    live: "https://luizteixeirasantos.github.io/landingPageNutricionista/",
   },
 ];
 
@@ -159,7 +188,7 @@ function App() {
 
       {/* SEÇÃO DE SKILLS (CATEGORIZADA) */}
       <section className="skills-section" id="skills">
-        <h2 className="section-title text-center">MINHAS COMPETÊNCIAS</h2>
+        <h2 className="section-title text-center">SKILLS</h2>
 
         <div className="skills-category">
           <h3 className="skills-subtitle text-light-green">HARD SKILLS</h3>
@@ -202,7 +231,7 @@ function App() {
 
       {/* SEÇÃO DE PROJETOS */}
       <section className="projects-section" id="projects">
-        <h2 className="section-title text-center">MEUS PROJETOS</h2>
+        <h2 className="section-title text-center">PROJECTS</h2>
         <div className="projects-grid">
           {meusProjetos.map((projeto, index) => (
             <motion.div
