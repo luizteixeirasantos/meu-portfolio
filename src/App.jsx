@@ -74,7 +74,8 @@ const meusProjetos = [
     id: 3,
     icone: <FaCog style={{ fontSize: "2rem", fill: "#a855f7" }} />,
     titulo: "Dashboard WaveSolder",
-    descricao: "Sistema automático de calculo de fluxo, visando performance, qualidade e economia.",
+    descricao:
+      "Sistema automático de calculo de fluxo, visando performance, qualidade e economia.",
     detalhes: `Sistema criado para automatizar o cálculo do fluxo ideal para placas de circuito impresso (PCI) em linhas de produção. 
 
     O sistema considera variáveis operacionais como:
@@ -97,9 +98,8 @@ const meusProjetos = [
     detalhes:
       "O objetivo principal desta página é apresentar a metodologia da Dra. Eduarda Goulart, seus serviços de consulta e acompanhamento, e capturar agendamentos, principalmente via WhatsApp, transformando visitantes em clientes.",
     tecnologias: ["JavaScript", "HTML", "CSS"],
-    github:
-      "https://github.com/luizteixeirasantos/landingPageNutricionista.git",
-    live: "https://luizteixeirasantos.github.io/landingPageNutricionista/",
+    github: "https://github.com/luizteixeirasantos/nutri-landing-page.git",
+    live: "https://nutri-landing-page-blush.vercel.app/",
   },
 ];
 
