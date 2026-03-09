@@ -277,11 +277,11 @@ function App() {
         <div className="carousel-container">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1}
+            spaceBetween={60}
+            slidesPerView={3}
             navigation
             pagination={{ clickable: true, dynamicBullets: true }}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            autoplay={{ delay: 4500, disableOnInteraction: false }}
             breakpoints={{
               // Celulares maiores / Tablets em pé
               640: {
@@ -322,7 +322,7 @@ function App() {
                     className="btn-secondary"
                     style={{
                       marginTop: "1rem",
-                      fontSize: "0.8rem",
+                      fontSize: "1rem",
                       color: "#000",
                       fontWeight: "bold",
                     }}
@@ -330,7 +330,7 @@ function App() {
                     Saiba Mais
                   </button>
                 </div>
-              </SwiperSlide>
+              </SwiperSlide >
             ))}
           </Swiper>
         </div>
@@ -375,7 +375,7 @@ function App() {
                   rel="noreferrer"
                   className="btn-primary"
                 >
-                  <FaGithub /> GitHub
+                  <FaGithub className="FaGithub" style={{fill: "#fff", fontSize: "1.3rem"}} /> GitHub
                 </a>
                 {selectedProject.live && (
                   <a

@@ -427,12 +427,17 @@ html {
 }
 
 .modal-footer .btn-primary {
-  background-color: var(--cyan-glow);
-  color: #000;
+  border: 2px solid var(--cyan-glow);
+  color: var(--cyan-glow);
 }
 
 .modal-footer .btn-primary:hover {
-  box-shadow: 0 0 15px var(--cyan-glow);
+  background-color: var(--cyan-glow);
+  color: #000;
+}
+.btn-primary:hover .FaGithub {
+  fill: #000 !important;
+  transition: all 0.3s ease;
 }
 
 .modal-footer .btn-secondary {
@@ -450,7 +455,7 @@ html {
    ========================================= */
 .carousel-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
   box-sizing: border-box;
   overflow: hidden;
@@ -458,7 +463,8 @@ html {
 }
 
 .swiper {
-  padding: 15px !important;
+  padding-left: 60px !important;
+  padding-right: 60px !important;
 }
 
 .swiper-slide {
@@ -479,6 +485,18 @@ html {
   background-color: #00ffff !important;
   box-shadow: 0 0 10px #00ffff !important;
   transform: scale(1.3);
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+  color: #00ffff !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next {
+  right: 0 !important;
+  color: #00ffff !important;
+  transition: all 0.3s ease;
 }
 
 /* Customização da Navegação (Setas) */
@@ -650,5 +668,11 @@ html {
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
+  }
+
+  /* Devolve o espaço aos cartões no telemóvel, já que as setas estão ocultas */
+  .swiper {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
   }
 }
