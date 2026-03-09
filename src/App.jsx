@@ -277,8 +277,8 @@ function App() {
         <div className="carousel-container">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={60}
-            slidesPerView={3}
+            spaceBetween={40}
+            slidesPerView={1}
             navigation
             pagination={{ clickable: true, dynamicBullets: true }}
             autoplay={{ delay: 4500, disableOnInteraction: false }}
