@@ -13,6 +13,7 @@ import {
   FaTimes,
   FaWhatsapp,
 } from "react-icons/fa";
+import { AiFillCalculator } from "react-icons/ai";
 import { GiFarmTractor } from "react-icons/gi";
 import "./App.css";
 import minhaFoto from "./minha-foto.png";
@@ -100,6 +101,40 @@ const meusProjetos = [
     tecnologias: ["JavaScript", "HTML", "CSS"],
     github: "https://github.com/luizteixeirasantos/nutri-landing-page.git",
     live: "https://nutri-landing-page-blush.vercel.app/",
+  },
+  {
+    id: 5,
+    icone: <AiFillCalculator style={{ fontSize: "3rem", fill: "#069db8" }} />,
+    titulo: "Calculadora de Retroativo Salarial",
+    descricao:
+      "Aplicação web desenvolvida em React + Vite para cálculo de valores retroativos salariais",
+    detalhes: `
+    🚀 Funcionalidades
+
+      💰 Cálculos financeiros
+      ✔ Diferença entre salário anterior e atual 
+      ✔ Cálculo de retroativo salarial 
+      ✔ 13º salário proporcional 
+      ✔ Cálculo automático da alíquota de INSS 
+      ✔ Total líquido após descontos
+
+      📊 Visualização de dados
+      ✔ Gráfico dinâmico dos resultados 
+      ✔ Comparação visual entre valores 
+      ✔ Dashboard simples e intuitivo
+
+      📂 Exportação de dados
+      ✔ Exportar resultado em PDF 
+      ✔ Exportar resultado em Excel (.xlsx)
+
+      🧠 Recursos adicionais
+      ✔ Histórico de cálculos (Em andamento)
+      ✔ Armazenamento em LocalStorage (Em andamento)
+      ✔ Layout responsivo 
+      ✔ Interface simples e profissional`,
+    tecnologias: ["JavaScript", "React", "CSS", "Vite"],
+    github: "https://github.com/luizteixeirasantos/calculadora_retroativo.git",
+    live: "https://calculadora-retroativo-salario.vercel.app/",
   },
 ];
 
