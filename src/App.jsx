@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { AiFillCalculator } from "react-icons/ai";
 import {
   FaBars,
   FaCog,
@@ -13,10 +14,16 @@ import {
   FaTimes,
   FaWhatsapp,
 } from "react-icons/fa";
-import { AiFillCalculator } from "react-icons/ai";
 import { GiFarmTractor } from "react-icons/gi";
 import "./App.css";
 import minhaFoto from "./minha-foto.png";
+
+// Imports do Swiper
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // 1. CONFIGURAÇÃO DE HARD SKILLS
 const hardSkills = [
@@ -264,38 +271,68 @@ function App() {
         </div>
       </section>
 
-      {/* SEÇÃO DE PROJETOS */}
+      {/* SEÇÃO DE PROJETOS (AGORA COM CARROSSEL) */}
       <section className="projects-section" id="projects">
         <h2 className="section-title text-center">PROJECTS</h2>
-        <div className="projects-grid">
-          {meusProjetos.map((projeto, index) => (
-            <motion.div
-              className="project-card"
-              key={projeto.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              onClick={() => setSelectedProject(projeto)}
-            >
-              <div className="project-header">
-                {projeto.icone}
-                <h3>{projeto.titulo}</h3>
-              </div>
-              <p>{projeto.descricao}</p>
-              <button
-                className="btn-secondary"
-                style={{
-                  marginTop: "1rem",
-                  fontSize: "0.8rem",
-                  color: "#000",
-                  fontWeight: "bold",
-                }}
-              >
-                Saiba Mais
-              </button>
-            </motion.div>
-          ))}
+        <div className="carousel-container">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true, dynamicBullets: true }}
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            breakpoints={{
+              // Celulares maiores / Tablets em pé
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              // Tablets deitados / Notebooks pequenos
+              900: {
+                slidesPerView: 3,
+                spaceBetween: 25,
+              },
+              // Telas grandes (Desktops)
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+            style={{ paddingBottom: "3rem", paddingTop: "1rem" }}
+          >
+            {meusProjetos.map((projeto) => (
+              <SwiperSlide key={projeto.id}>
+                <div
+                  className="project-card"
+                  onClick={() => setSelectedProject(projeto)}
+                  style={{
+                    cursor: "pointer",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div className="project-header">
+                    {projeto.icone}
+                    <h3>{projeto.titulo}</h3>
+                  </div>
+                  <p style={{ flexGrow: 1 }}>{projeto.descricao}</p>
+                  <button
+                    className="btn-secondary"
+                    style={{
+                      marginTop: "1rem",
+                      fontSize: "0.8rem",
+                      color: "#000",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Saiba Mais
+                  </button>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
