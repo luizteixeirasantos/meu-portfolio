@@ -23,19 +23,17 @@
   color: var(--text-white);
 }
 
-/* Adicionamos a tag html aqui junto com o body */
 html,
 body {
-  background: linear-gradient(
-    180deg,
-    var(--bg-dark-start) 0%,
-    var(--bg-dark-end) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--bg-dark-start) 0%,
+      var(--bg-dark-end) 100%);
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
   justify-content: center;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 html {
@@ -74,9 +72,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  /* Garante que o menu cole na esquerda */
   width: 100%;
-  /* Mudamos de 100vw para 100% */
   z-index: 1000;
   border-bottom: 1px solid rgba(168, 85, 247, 0.2);
 }
@@ -91,7 +87,6 @@ html {
 .nav-links {
   display: flex;
   gap: 2vw;
-  /* Espaçamento dinâmico */
   font-weight: 600;
 }
 
@@ -131,7 +126,6 @@ html {
   align-items: center;
   justify-content: center;
   padding: 8rem 5vw 4rem 5vw;
-  /* Mais padding no topo por causa do menu fixo */
 }
 
 .hero-profile {
@@ -140,7 +134,6 @@ html {
   align-items: center;
   justify-content: center;
   width: 100%;
-  /* Ocupa a largura total do padding lateral */
 }
 
 .profile-img {
@@ -155,11 +148,10 @@ html {
 }
 
 .hero-content {
-  /* Contraste controlado: O conteúdo cresce, mas o texto não espalha demais para leitura */
   max-width: 900px;
 }
 
-.hero-content h1 {
+.hero-title {
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
@@ -180,7 +172,6 @@ html {
   line-height: 1.6;
 }
 
-/* Botão Get in Touch (Neon Ciano) */
 .get-in-touch-btn {
   background-color: transparent;
   border: 2px solid var(--cyan-glow);
@@ -189,6 +180,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
 .get-in-touch-btn:hover {
@@ -199,7 +191,7 @@ html {
 }
 
 /* =========================================
-   4. Seção: Habilidades (Pílulas Neon Espalhadas)
+   4. Seção: Habilidades (Pílulas Neon)
    ========================================= */
 .skills-section {
   padding: 6rem 5vw;
@@ -214,12 +206,27 @@ html {
   letter-spacing: 2px;
 }
 
+.skills-category {
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.skills-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px currentColor;
+}
+
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-  /* REMOVIDO: max-width. Agora ocupa toda a largura disponível. */
+  padding: 0 5vw;
   width: 100%;
 }
 
@@ -233,8 +240,6 @@ html {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   background-color: rgba(0, 0, 0, 0.2);
-
-  /* AJUSTE AQUI: O brilho agora segue a cor da pílula */
   box-shadow: 0 0 10px var(--skill-color);
   opacity: 0.9;
 }
@@ -242,39 +247,13 @@ html {
 .skill-pill:hover {
   transform: translateY(-5px) scale(1.05);
   background-color: var(--skill-color);
-  color: #000; /* Texto fica preto para dar contraste no fundo neon */
+  color: #000;
   box-shadow: 0 0 25px var(--skill-color);
   opacity: 1;
 }
 
-.skills-category {
-  margin-bottom: 4rem;
-  width: 100%;
-}
-
-.skills-subtitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: center;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  /* Brilho sutil no subtítulo */
-  text-shadow: 0 0 10px currentColor;
-}
-
-/* Garante que o grid de pílulas use todo o espaço com o respiro de 5vw */
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  padding: 0 5vw;
-  width: 100%;
-}
-
 /* =========================================
-   5. Seção: Projetos (Grid Full Width)
+   5. Seção: Projetos & Modal
    ========================================= */
 .projects-section {
   padding: 6rem 5vw;
@@ -282,16 +261,13 @@ html {
 
 .projects-grid {
   display: grid;
-  /* Grid responsivo: ocupa toda a largura e quebra cards de no mínimo 350px */
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 3rem;
-  /* REMOVIDO: max-width. */
   width: 100%;
 }
 
 .project-card {
   background-color: #0f172a;
-  /* Um tom acima do fundo */
   padding: 3rem;
   border-radius: 16px;
   border: 1px solid rgba(168, 85, 247, 0.1);
@@ -331,26 +307,15 @@ html {
   font-weight: bold !important;
   border: 2px solid #f1f1f4;
   background-color: #42228f;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-.modal-description {
-  white-space: pre-line;
-}
-.tech-stack {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
-.tech-badge {
-  background-color: transparent;
-  border: 1px solid var(--purple-glow);
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--purple-glow);
-  text-transform: uppercase;
+.project-card button:hover {
+  background-color: #f1f1f4;
+  color: #42228f !important;
 }
 
 .projects-more {
@@ -358,7 +323,6 @@ html {
   margin-top: 5rem;
 }
 
-/* Botão Ver Mais Projetos (Neon Roxo) */
 .more-projects-btn {
   background-color: transparent;
   border: 2px solid var(--purple-glow);
@@ -366,6 +330,8 @@ html {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .more-projects-btn:hover {
@@ -374,6 +340,7 @@ html {
   box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
 }
 
+/* --- MODAL DE PROJETOS --- */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -397,6 +364,8 @@ html {
   max-width: 600px;
   width: 100%;
   position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .close-modal {
@@ -410,14 +379,123 @@ html {
   cursor: pointer;
 }
 
+.modal-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-description {
+  white-space: pre-line;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tech-badge {
+  background-color: transparent;
+  border: 1px solid var(--purple-glow);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--purple-glow);
+  text-transform: uppercase;
+}
+
 .modal-footer {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
 }
 
+.modal-footer a {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.modal-footer .btn-primary {
+  background-color: var(--cyan-glow);
+  color: #000;
+}
+
+.modal-footer .btn-primary:hover {
+  box-shadow: 0 0 15px var(--cyan-glow);
+}
+
+.modal-footer .btn-secondary {
+  border: 2px solid var(--purple-glow);
+  color: var(--purple-glow);
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: var(--purple-glow);
+  color: #fff;
+}
+
 /* =========================================
-   6. Rodapé (Full Width Dark)
+   6. Carrossel Swiper
+   ========================================= */
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* Trava qualquer vazamento lateral */
+}
+
+.swiper {
+  padding: 15px !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+  /* Garante alturas iguais para os cards */
+}
+
+/* Customização da Paginação (Bolinhas) */
+.swiper-pagination-bullet {
+  background-color: #555 !important;
+  opacity: 1 !important;
+  width: 12px !important;
+  height: 12px !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #00ffff !important;
+  box-shadow: 0 0 10px #00ffff !important;
+  transform: scale(1.3);
+}
+
+/* Customização da Navegação (Setas) */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00ffff !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  text-shadow: 0 0 15px #00ffff;
+  transform: scale(1.1);
+}
+
+/* =========================================
+   7. Rodapé
    ========================================= */
 .main-footer {
   background-color: var(--footer-dark);
@@ -440,7 +518,6 @@ html {
   font-size: 0.85rem;
 }
 
-/* Esconder o botão do menu em ecrãs grandes (Computador) */
 .mobile-menu-btn {
   display: none;
   background: transparent;
@@ -453,10 +530,12 @@ html {
 }
 
 /* =========================================
-   7. Responsividade Total e Menu Mobile
+   8. Media Queries / Responsividade
    ========================================= */
+
+/* Desktop Médio / Tablets deitados */
 @media (max-width: 1200px) {
-  .hero-content h1 {
+  .hero-title {
     font-size: 3rem;
   }
 
@@ -465,6 +544,7 @@ html {
   }
 }
 
+/* Tablets em pé / Monitores pequenos */
 @media (max-width: 1024px) {
   .hero-profile {
     flex-direction: column;
@@ -477,129 +557,96 @@ html {
     height: 220px;
   }
 
-  /* Esconder a barra social do topo para poupar espaço no mobile */
   .social-top {
     display: none;
   }
 
-  /* Mostrar o botão do menu hambúrguer */
   .mobile-menu-btn {
     display: block;
   }
 
-  /* Transformar os nav-links num menu lateral (Slide-in) */
   .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
-    /* Começa escondido fora do ecrã à direita */
     width: 100vw;
     height: 100vh;
     background-color: rgba(10, 15, 30, 0.95);
-    /* Fundo escuro quase opaco */
     backdrop-filter: blur(15px);
     flex-direction: column;
-    /* Links um debaixo do outro */
     justify-content: center;
     align-items: center;
     gap: 3rem;
     transition: right 0.4s ease-in-out;
-    /* Animação de deslizar suave */
     z-index: 1500;
   }
 
-  /* Quando o estado isMenuOpen muda para true, esta classe é ativada no JSX */
   .nav-links.active {
     right: 0;
-    /* O menu desliza para dentro do ecrã */
   }
 
   .nav-links a {
     font-size: 1.5rem;
-    /* Links maiores para clicar facilmente com o dedo */
     letter-spacing: 2px;
   }
 }
 
+/* =========================================
+   RESPONSIVIDADE: CELULARES (Telas Pequenas)
+   ========================================= */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
+
+  /* Trava o container mestre do React */
+  #root {
+    width: 100%;
+    overflow-x: hidden;
   }
 
+  /* Reduz o título e permite que palavras gigantes quebrem */
+  .hero-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    word-break: break-word;
+    /* Mágica anti-vazamento aqui */
+  }
+
+  /* Reduz o subtítulo neon */
   .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.1rem !important;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 
+  /* Ajusta o texto de apresentação */
   .hero-text {
-    font-size: 1.1rem;
+    font-size: 0.95rem !important;
+    padding: 0 10px;
+  }
+
+  .hero-content,
+  .hero-profile {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  /* Reduz drasticamente o "gordura" interna do card no mobile */
+  .project-card {
+    padding: 1.5rem !important;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
   }
-}
 
-/* CONTAINER DO CARROSSEL */
-.carousel-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* CUSTOMIZAÇÃO DAS BOLINHAS (PAGINATION) DO SWIPER */
-.swiper-pagination-bullet {
-  background-color: #555 !important;
-  opacity: 1 !important;
-  width: 12px !important;
-  height: 12px !important;
-  transition: all 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #00ffff !important;
-  /* Ciano Neon */
-  box-shadow: 0 0 10px #00ffff !important;
-  transform: scale(1.3);
-}
-
-/* CUSTOMIZAÇÃO DAS SETAS (NAVIGATION) DO SWIPER */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #00ffff !important;
-  /* Ciano Neon */
-  transition: all 0.3s ease;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  text-shadow: 0 0 15px #00ffff;
-  transform: scale(1.1);
-}
-
-/* Para garantir que os cards fiquem do mesmo tamanho lado a lado */
-.swiper-slide {
-  height: auto;
-}
-
-/* Garante que os slides acompanhem a altura do maior card */
-.swiper-slide {
-  height: auto !important;
-}
-
-/* Espaço extra para o brilho neon não ser cortado nas laterais do Swiper */
-.swiper {
-  padding: 15px !important;
-  margin: -15px !important;
-}
-
-/* Ocultar setas em telas menores (UX melhor para touch) */
-@media (max-width: 768px) {
-
+  /* Oculta as setas do carrossel no mobile */
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
