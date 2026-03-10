@@ -124,6 +124,7 @@ const meusProjetos = [
       ✔ 13º salário proporcional 
       ✔ Cálculo automático da alíquota de INSS 
       ✔ Total líquido após descontos
+      ✔ Calculadora simples para cálculos
 
       📊 Visualização de dados
       ✔ Gráfico dinâmico dos resultados 
