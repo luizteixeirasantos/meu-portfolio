@@ -435,6 +435,7 @@ html {
   background-color: var(--cyan-glow);
   color: #000;
 }
+
 .btn-primary:hover .FaGithub {
   fill: #000 !important;
   transition: all 0.3s ease;
