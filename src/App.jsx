@@ -100,10 +100,16 @@ const meusProjetos = [
     icone: <GiFarmTractor style={{ fontSize: "2rem", fill: "#00ff00" }} />,
     titulo: "Fieldlytics",
     descricao:
-      "Utilizamos Inteligência Artificial avançada para análise de imagens agrícolas e integração de dados climáticos em tempo real, permitindo diagnósticos precisos e recomendações personalizadas para cada tipo de plantação, além de controle financeiro da fazenda.",
-    detalhes: `Fieldlytics é uma plataforma SaaS (Software as a Service) voltada para o agronegócio, que utiliza Inteligência Artificial e dados climáticos em tempo real para auxiliar produtores rurais na tomada de decisões mais inteligentes, sustentáveis e produtivas.
+      "Plataforma para gestão agrícola com foco em análise de dados e otimização de processos rurais.",
+    detalhes: `🚀 Funcionalidades
 
-      O objetivo do projeto é revolucionar a agricultura por meio da tecnologia, tornando soluções avançadas acessíveis tanto para pequenos produtores quanto para grandes fazendas.`,
+      ✔ Inteligência artificial. (Em andamento)
+      ✔ Recomendações personalizadas através da IA (Em andamento).
+      ✔ Dados climáticos em tempo real.
+      ✔ Diagnósticos precisos.
+      ✔ Controle financeiro da fazenda.
+      ✔ Acesso offline.
+      `,
     tecnologias: ["React", "Node.js", "Python"],
     github: "https://github.com/luizteixeirasantos/meu-portfolio",
     live: null,
@@ -178,7 +184,7 @@ function App() {
         </div>
         <div className="social-top">
           <a
-            href="https://www.linkedin.com/in/luizteixeirasantos"
+            href="https://www.linkedin.com/in/luizh-developer"
             target="_blank"
             rel="noreferrer"
           >
@@ -214,6 +220,7 @@ function App() {
             <h1 className="hero-title" style={{ cursor: "default" }}>
               Olá, eu sou o Luiz Henrique
             </h1>
+            {/* apaixonado por transformar ideias em soluções reais. */}
             <h2 className="subtitle">
               <span className="text-light-green" style={{ cursor: "default" }}>
                 DESENVOLVEDOR
@@ -223,9 +230,47 @@ function App() {
               </span>
             </h2>
             <p className="hero-text" style={{ cursor: "default" }}>
-              Profissional de tecnologia com formação técnica e vocação para o
-              desenvolvimento web. Especialista em criar interfaces com React e
-              arquiteturas de servidor com Node.js.
+              Minha jornada no desenvolvimento de software é movida pela
+              curiosidade e pelo desejo de criar produtos digitais que sejam, ao
+              mesmo tempo, eficientes e visualmente impactantes. Com foco no
+              ecossistema JavaScript, especializei-me em construir interfaces
+              dinâmicas com React.js e arquiteturas de back-end robustas
+              utilizando Node.js e MySQL.
+              <br />
+              <br />
+              Acredito que um bom código vai além do funcionamento: ele deve ser
+              limpo, escalável e de fácil manutenção. Por isso, utilizo
+              ferramentas como Git e GitHub para um versionamento rigoroso e a
+              Vercel para garantir deploys ágeis e alta performance em cada
+              entrega.
+              <br />
+              <br />
+              Atualmente, estou expandindo meu repertório técnico com TypeScript
+              e React Native, buscando sempre as melhores práticas do mercado
+              para oferecer experiências de usuário excepcionais.
+              <br />
+              <br />
+              🚀 O que eu domino:
+              <br />
+              <li style={{ marginLeft: "40px" }}>
+                Front-end:{" "}
+                <strong>
+                  React.js, JavaScript (ES6+), HTML5, CSS3 e Styled Components.
+                </strong>
+              </li>
+              <li style={{ marginLeft: "40px" }}>
+                Back-end:{" "}
+                <strong>
+                  Node.js, Express e bancos de dados relacionais (MySQL).
+                </strong>
+              </li>
+              <li style={{ marginLeft: "40px" }}>
+                Tooling:{" "}
+                <strong>Git, GitHub, Vercel e Metodologias Ágeis.</strong>
+              </li>
+              <br />
+              Estou sempre aberto a novos desafios e colaborações que busquem
+              inovação técnica. Vamos construir algo incrível juntos?
             </p>
             <a
               href="mailto:contatoluizhteixeira@gmail.com"
@@ -424,7 +469,7 @@ function App() {
       <footer className="main-footer" id="contact">
         <div className="footer-links">
           <a
-            href="https://linkedin.com/in/luizteixeirasantos"
+            href="https://linkedin.com/in/luizh-developer"
             target="_blank"
             rel="noreferrer"
           >
