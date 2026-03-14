@@ -292,7 +292,7 @@ html {
 .project-card h3 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--yellow-glow);
+  color: #3ff499;
 }
 
 .project-card p {

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { AiFillCalculator } from "react-icons/ai";
 import {
   FaBars,
+  FaClipboard,
   FaCog,
   FaDatabase,
   FaEnvelope,
@@ -33,7 +34,6 @@ const hardSkills = [
   { nome: "Express.js", cor: "#00ff00" },
   { nome: "HTML/CSS", cor: "#a855f7" },
   { nome: "MySQL", cor: "#f97316" },
-  { nome: "Python", cor: "#fbbf24" },
   { nome: "Git/GitHub", cor: "#fbbf24" },
 ];
 
@@ -50,18 +50,59 @@ const softSkills = [
 const meusProjetos = [
   {
     id: 1,
+    icone: <FaClipboard style={{ fontSize: "2rem", fill: "#757272" }} />,
+    titulo: "MyHome",
+    descricao:
+      "Uma aplicação Full-Solution para planejamento de mudanças, focada em controle de enxoval, lista de compras de mercado e saúde financeira compartilhada.",
+    detalhes: `O MyHome. é mais do que um simples checklist. É um ecossistema de gestão residencial projetado para quem está montando um novo lar. A aplicação resolve o problema do 'gasto invisível', calculando como cada parcelamento de móvel ou gasto fixo impacta a renda mensal total da família em tempo real.
+      
+      ✨ Funcionalidades Principais
+
+        📊 Dashboard Interativo: Gráficos de pizza (Recharts) que mostram a divisão de responsabilidades financeiras por membro da casa.
+
+        📑 Checklist de Enxoval com Inteligência Financeira:
+        Cadastro de itens com cálculo de parcelamento (Ex: 10x de R$ 200,00).
+        Impacto direto no fluxo de caixa mensal.
+        Links de lojas higienizados ("Acesse aqui!").
+
+        🛒 Gestão de Mercado:
+        Lista de compras com cálculo de Quantidade x Preço Unitário.
+        Filtros por categoria (Limpeza, Carnes, Padaria, etc.).
+
+        👥 Planejamento Multi-Usuário:
+        Cadastro de múltiplos moradores e seus respectivos salários.
+        Atribuição de contas fixas por responsável.
+
+        ✏️ Edição via Modais: Interface de edição fluida com modais dinâmicos (Framer Motion).
+
+        💾 Sistema de Backup Robusto:
+        Persistência em LocalStorage.
+        Função de Exportar/Importar JSON, garantindo segurança total dos dados.
+      `,
+    tecnologias: [
+      "React",
+      "Tailwind CSS",
+      "Vercel",
+      "Framer Motion",
+      "Recharts",
+    ],
+    github: "https://github.com/luizteixeirasantos/check-list-casa.git",
+    live: "https://myhome-system.vercel.app/",
+  },
+  {
+    id: 2,
     icone: <FaHeartbeat style={{ fontSize: "2rem", fill: "#f80000" }} />,
     titulo: "Landing Page Nutricionista",
     descricao:
       "Page profissional da Dra. Eduarda Goulart, nutricionista, focada em uma metodologia de Nutrição Sem Neura e planos alimentares personalizados..",
     detalhes:
       "O objetivo principal desta página é apresentar a metodologia da Dra. Eduarda Goulart, seus serviços de consulta e acompanhamento, e capturar agendamentos, principalmente via WhatsApp, transformando visitantes em clientes.",
-    tecnologias: ["JavaScript", "HTML", "CSS"],
+    tecnologias: ["JavaScript", "HTML", "CSS", "React"],
     github: "https://github.com/luizteixeirasantos/nutri-landing-page.git",
     live: "https://nutri-landing-page-blush.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     icone: <AiFillCalculator style={{ fontSize: "3rem", fill: "#069db8" }} />,
     titulo: "Calculadora de Retroativo Salarial",
     descricao:
@@ -96,7 +137,7 @@ const meusProjetos = [
     live: "https://calculadora-retroativo-salario.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     icone: <GiFarmTractor style={{ fontSize: "2rem", fill: "#00ff00" }} />,
     titulo: "Fieldlytics",
     descricao:
@@ -115,7 +156,7 @@ const meusProjetos = [
     live: null,
   },
   {
-    id: 4,
+    id: 5,
     icone: <FaDatabase style={{ fontSize: "2rem", fill: "#f97316" }} />,
     titulo: "Sistema de OS",
     descricao:
@@ -132,7 +173,7 @@ const meusProjetos = [
     live: null,
   },
   {
-    id: 5,
+    id: 6,
     icone: <FaCog style={{ fontSize: "2rem", fill: "#a855f7" }} />,
     titulo: "Dashboard WaveSolder",
     descricao:
