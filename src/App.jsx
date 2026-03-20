@@ -271,24 +271,26 @@ function App() {
               </span>
             </h2>
             <p className="hero-text" style={{ cursor: "default" }}>
-              Minha jornada no desenvolvimento de software é movida pela
-              curiosidade e pelo desejo de criar produtos digitais que sejam, ao
-              mesmo tempo, eficientes e visualmente impactantes. Com foco no
+              Minha jornada no desenvolvimento de software é movida pelo desejo
+              de resolver problemas reais e criar produtos digitais que sejam,
+              ao mesmo tempo, eficientes e visualmente impactantes. Com foco no
               ecossistema JavaScript, especializei-me em construir interfaces
-              dinâmicas com React.js e arquiteturas de back-end robustas
-              utilizando Node.js e MySQL.
+              dinâmicas com React e arquiteturas de back-end robustas utilizando
+              Node.js e MySQL.
+              <br />
+              <br />
+              Minha experiência prática vai desde a criação de landing pages de
+              alta conversão até o desenvolvimento de sistemas complexos, como
+              um MES (Controle de Produção) para a indústria, onde implementei
+              comunicação em tempo real via WebSockets, e ecossistemas de gestão
+              financeira com dashboards interativos.
               <br />
               <br />
               Acredito que um bom código vai além do funcionamento: ele deve ser
-              limpo, escalável e de fácil manutenção. Por isso, utilizo
-              ferramentas como Git e GitHub para um versionamento rigoroso e a
-              Vercel para garantir deploys ágeis e alta performance em cada
-              entrega.
-              <br />
-              <br />
-              Atualmente, estou expandindo meu repertório técnico com TypeScript
-              e React Native, buscando sempre as melhores práticas do mercado
-              para oferecer experiências de usuário excepcionais.
+              escalável, focado na experiência do usuário e agregar valor ao
+              negócio. Utilizo um fluxo de trabalho moderno com Git/GitHub para
+              versionamento rigoroso e Vercel para garantir deploys ágeis e alta
+              performance em cada entrega.
               <br />
               <br />
               🚀 O que eu domino:
@@ -296,22 +298,24 @@ function App() {
               <li style={{ marginLeft: "40px" }}>
                 Front-end:{" "}
                 <strong>
-                  React.js, JavaScript (ES6+), HTML5, CSS3 e Styled Components.
+                  React.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS e
+                  Styled Components.
                 </strong>
               </li>
               <li style={{ marginLeft: "40px" }}>
-                Back-end:{" "}
+                Back-end & Dados:{" "}
+                <strong>Node.js, Express, MySQL e WebSockets.</strong>
+              </li>
+              <li style={{ marginLeft: "40px" }}>
+                Ecossistema & UI:{" "}
                 <strong>
-                  Node.js, Express e bancos de dados relacionais (MySQL).
+                  Vite, Git, GitHub, Vercel, Recharts e Framer Motion.
                 </strong>
-              </li>
-              <li style={{ marginLeft: "40px" }}>
-                Tooling:{" "}
-                <strong>Git, GitHub, Vercel e Metodologias Ágeis.</strong>
               </li>
               <br />
               Estou sempre aberto a novos desafios e colaborações que busquem
-              inovação técnica. Vamos construir algo incrível juntos?
+              excelência técnica e inovação. Vamos construir algo incrível
+              juntos?
             </p>
             <a
               href="mailto:contatoluizhteixeira@gmail.com"
