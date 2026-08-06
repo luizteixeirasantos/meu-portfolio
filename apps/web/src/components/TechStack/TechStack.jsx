@@ -1,9 +1,14 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 export const TechStack = () => {
   const technologies = [
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
     "JavaScript",
+    "Java",
     "React",
     "Node.js",
     "MySQL",
@@ -12,7 +17,6 @@ export const TechStack = () => {
     "Git",
     "Vercel",
     "Framer Motion",
-    "GSAP",
   ];
 
   // Duplicamos o array para criar a ilusão de rolagem infinita sem cortes

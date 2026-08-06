@@ -80,7 +80,7 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Meu Enxoval",
+    title: "Gestão Residencial",
     category: "Financial App",
     tech: "React, autoTable, JavaScript",
     image:

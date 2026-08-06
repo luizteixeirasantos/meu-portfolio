@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const words = [
   "Olá",
   "Hello",
-  "Hola",
   "Luiz Henrique",
   "Full Stack Developer",
   "Bem-vindo",
