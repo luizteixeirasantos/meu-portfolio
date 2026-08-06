@@ -1,0 +1,12 @@
+{
+  "name": "@luiz/ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@luiz/utils": "*",
+    "framer-motion": "^11.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

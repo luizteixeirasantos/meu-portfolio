@@ -1,0 +1,7 @@
+{
+  "name": "@luiz/config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "description": "Configurações compartilhadas de linting e estilização"
+}
