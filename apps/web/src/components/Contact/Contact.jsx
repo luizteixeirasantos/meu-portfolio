@@ -207,7 +207,7 @@ export const Contact = () => {
                   <FaLinkedinIn /> - LinkedIn ↗
                 </a>
                 <a
-                  href="https://instagram.com/luiz_henrique_ts/"
+                  href="https://instagram.com/luizts.dev/"
                   target="_blank"
                   rel="noreferrer"
                   className="text-xl hover:text-neutral-400 transition-colors inline-flex items-center gap-2"
